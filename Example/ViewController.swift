@@ -24,6 +24,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            .font: UIFont(name: "Avenir-Heavy", size: 17)!,
+        ]
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .white
+        
+        title = "Images"
 
         for idx in 0...17 {
             images.append("\(idx)")
@@ -66,12 +74,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 }
 
 extension ViewController: ZoomableTransitionSource {
-    func transitionSourceView() -> UIView {
+    var sourceView: UIImageView? {
         guard let indexPath = selectedIndexPath,
-            let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return UIView() }
-        let imageView = UIImageView(image: cell.imageView.image)
+            let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return nil }
         let cellFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame ?? .zero
+        let imageView = UIImageView(image: cell.imageView.image)
         imageView.frame = collectionView.convert(cellFrame, to: view)
         return imageView
+    }
+    
+    func zoomableSourceView() -> UIView {
+        guard let sourceView = sourceView else { return UIView() }
+        return sourceView
+    }
+    
+    func zoomableSourceViewFrame() -> CGRect {
+        guard let indexPath = selectedIndexPath else { return .zero }
+        let cellFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame ?? .zero
+        return collectionView.convert(cellFrame, to: view)
+    }
+    
+    func zoomableSourceTransitionWillBegin(targetView: UIView) {
+        sourceView?.isHidden = true
+    }
+    
+    func zoomableSourceTransitionDidEnd(targetView: UIView) {
+        sourceView?.isHidden = false
+    }
+    
+    func zoomableSourceTransitionDidCancel(targetView: UIView) {
+        sourceView?.isHidden = false
     }
 }

@@ -43,6 +43,7 @@
 		2742362423A68D5F000681E4 /* ImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2742362323A68D5F000681E4 /* ImageViewController.storyboard */; };
 		2742362623A7A603000681E4 /* ZoomableTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742362523A7A602000681E4 /* ZoomableTransition.swift */; };
 		2742362823A7A902000681E4 /* ZoomableAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742362723A7A902000681E4 /* ZoomableAnimatedTransitioning.swift */; };
+		27635DE4241E6F98009FD6D2 /* ZoomableInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27635DE3241E6F98009FD6D2 /* ZoomableInteractiveTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		2742362323A68D5F000681E4 /* ImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageViewController.storyboard; sourceTree = "<group>"; };
 		2742362523A7A602000681E4 /* ZoomableTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableTransition.swift; sourceTree = "<group>"; };
 		2742362723A7A902000681E4 /* ZoomableAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		27635DE3241E6F98009FD6D2 /* ZoomableInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableInteractiveTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				274235DA23A541BC000681E4 /* ZoomableTransitionTarget.swift */,
 				2742362523A7A602000681E4 /* ZoomableTransition.swift */,
 				2742362723A7A902000681E4 /* ZoomableAnimatedTransitioning.swift */,
+				27635DE3241E6F98009FD6D2 /* ZoomableInteractiveTransition.swift */,
 			);
 			path = ZoomableTransition;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27635DE4241E6F98009FD6D2 /* ZoomableInteractiveTransition.swift in Sources */,
 				2742362823A7A902000681E4 /* ZoomableAnimatedTransitioning.swift in Sources */,
 				274235DB23A541BC000681E4 /* ZoomableTransitionTarget.swift in Sources */,
 				2742362623A7A603000681E4 /* ZoomableTransition.swift in Sources */,

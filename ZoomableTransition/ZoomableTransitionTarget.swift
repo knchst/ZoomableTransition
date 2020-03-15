@@ -10,6 +10,7 @@ import UIKit
 
 public protocol ZoomableTransitionTarget {
     func zoomableTargetView() -> UIView
+    func zoomableTargetViewFrame() -> CGRect
     func zoomableTargetTransitionWillBegin(sourceView: UIView)
     func zoomableTargetTransitionDidEnd(sourceView: UIView)
     func zoomableTargetTransitionDidCancel(sourceView: UIView)

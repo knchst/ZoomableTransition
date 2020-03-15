@@ -16,7 +16,7 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imageView.image = image
     }
     
@@ -34,12 +34,29 @@ class ImageViewController: UIViewController {
 }
 
 extension ImageViewController: ZoomableTransitionTarget {
-    func transitionTargetView() -> UIView {
+    var targetTransitioningDuration: TimeInterval {
+        return 0.3
+    }
+    
+    func zoomableTargetView() -> UIView {
+        return imageView
+    }
+    
+    func zoomableTargetViewFrame() -> CGRect {
         view.layoutIfNeeded()
-        let imageView = UIImageView(image: self.imageView.image)
         var frame = self.imageView.frame
         frame.origin.y = self.navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height
-        imageView.frame = frame
-        return imageView
+        return frame
+    }
+    
+    func zoomableTargetTransitionWillBegin(sourceView: UIView) {
+        imageView.isHidden = true
+    }
+    
+    func zoomableTargetTransitionDidEnd(sourceView: UIView) {
+        imageView.isHidden = false
+    }
+    
+    func zoomableTargetTransitionDidCancel(sourceView: UIView) {
     }
 }
