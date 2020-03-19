@@ -84,7 +84,7 @@ extension ImageViewController: ZoomableTransitionTarget {
 }
 ```
 
-**3. UINavigationController **
+**3. UINavigationController**
 
 ```swift
 class TransitionNavigationController: UINavigationController {
