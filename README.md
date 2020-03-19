@@ -84,6 +84,20 @@ extension ImageViewController: ZoomableTransitionTarget {
 }
 ```
 
+**3. UINavigationController **
+
+```swift
+class TransitionNavigationController: UINavigationController {
+    lazy var transition = ZoomableTransition()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        delegate = transition
+    }
+}
+```
+
 ### Author
 
 Kenichi Saito / knchst@icloud.com / [@knchst0704](https://www.twitter.com/knchst0704)
