@@ -2,7 +2,7 @@
 
 A custom zoom transition for UINavigationController.
 
-<img src="https://raw.githubusercontent.com/knchst/ZoomableTransition/master/resources/sample.gif" width="375">
+<img src="https://raw.githubusercontent.com/knchst/ZoomableTransition/master/demo.gif" width="375">
 
 
 ### Installation:
