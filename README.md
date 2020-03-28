@@ -15,8 +15,7 @@ pod 'ZoomableTransition'
 
 ### Usage
 
-ZoomableTransiiton has two important protocols. To apply transiton for your UINavigationController when you must adapt source viewcontroller 
-
+ZoomableTransiiton has two important protocols.
 To apply the transition to your UINavigationController, source viewcontroller must conform to `ZoomableTransitionSource` and target viewcontroller must conform to ZoomableTransitionTarget.
 
 **1. ZoomableTransitionSource**
